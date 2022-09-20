@@ -28,13 +28,15 @@ package arrays_hashing;
 public class ValidAnagram {
     public boolean isAnagram(String s, String t) {
        if (s.length() != t.length()) return false;
-       // создаем вектор для 26 где все нули
+       // создаем вектор для 26 где все нули [0,0,0,0,0..,0]
        int[] store = new int[26];
-       // System.out.println(store);
+        //System.out.println(store[10]);
 
         for (int i = 0; i < s.length(); i++) {
-            store[s.charAt(i) - 'a']++; // если есть совпадение по букве плюсуем
-            store[t.charAt(i) - 'a']--; // если нет совпадения по букве минусуем
+            //s.charAt(i) - какая именно буква a, n, ..., m.
+            store[s.charAt(i) - 'a']++; // если есть совпадение по букве плюсуем по s
+            store[t.charAt(i) - 'a']--; // если нет совпадения по букве минусуем по t
+            System.out.println(s.charAt(i));
         }
 
         // если есть хотя бы один НЕ ноль в векторе, то не анаграмма
@@ -46,6 +48,6 @@ public class ValidAnagram {
         }
 
         System.out.println("true");
-       return true;
+        return true;
     }
 }
