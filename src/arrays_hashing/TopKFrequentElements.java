@@ -33,6 +33,8 @@ public class TopKFrequentElements {
         // создаем массив бакетов
         List<Integer>[] bucket = new List[nums.length + 1];
 
+        System.out.println(bucket.length);
+
         System.out.println(bucket.getClass());
 
         //  hashMap частотностей появления там элементов в массиве nums
@@ -60,15 +62,20 @@ public class TopKFrequentElements {
             //System.out.println(bucket.);
         }
 
-        System.out.println(bucket[3]);
+        //System.out.println(bucket[5]);
         List<Integer> res = new ArrayList<>();
 
+        // выбираем k самых частых элементов в nums
+        // идем  с конца на начало
         for (int pos = bucket.length - 1; pos >= 0 && res.size() < k; pos--) {
+            System.out.println(bucket.length);
             if (bucket[pos] != null) {
+                //System.out.println(bucket[pos]);
                 res.addAll(bucket[pos]);
             }
+            //System.out.println(res);
         }
-        //System.out.println(res);
+
         return res;
     }
 }
