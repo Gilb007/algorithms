@@ -28,7 +28,9 @@ import java.util.Set;
 public class ContainsDuplicate {
     public boolean containsDuplicate(int[] nums) {
 
+        //дополнительное место для хранения uniques (HashSet)
         Set<Integer> uniques = new HashSet<>();
+
         for (int i = 0; i < nums.length; i++) {
             if (uniques.contains(nums[i])) {
                 System.out.println("true");

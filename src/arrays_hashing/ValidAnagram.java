@@ -34,11 +34,19 @@ public class ValidAnagram {
 
         for (int i = 0; i < s.length(); i++) {
             //s.charAt(i) - какая именно буква a, n, ..., m.
-            store[s.charAt(i) - 'a']++; // если есть совпадение по букве плюсуем по s
-            store[t.charAt(i) - 'a']--; // если нет совпадения по букве минусуем по t
-            System.out.println(s.charAt(i));
+            /**s = anagram
+             * s.charAt(0) = 'a'
+             * 'a' - 'a' = 0
+             * 'n' - 'a' = 14 - 1 = 13
+             */
+            //System.out.println('a' - 'a');
+            store[s.charAt(i) - 'a']++; // если есть совпадение по букве плюсуем
+            //System.out.println(store[s.charAt(i) - 'a']);
+            store[t.charAt(i) - 'a']--; // если нет совпадения по букве минусуем
+            //System.out.println(store[t.charAt(i) - 'a']);
         }
 
+        // System.out.println(store[13]);
         // если есть хотя бы один НЕ ноль в векторе, то не анаграмма
         for (int n: store) {
             if (n != 0) {

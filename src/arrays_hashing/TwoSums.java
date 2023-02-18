@@ -9,7 +9,7 @@ import java.util.HashMap;
  *
  * You can return the answer in any order.
  *
- *
+ *hash table
  *
  * Example 1:
  *
@@ -27,28 +27,34 @@ import java.util.HashMap;
  *
  * Brute force: time = O(n^2), space = O(1)
  *
- * One pass: time = O(n), space = O(n)
+ * One pass:
+ * time = O(n), // раз проходимся по массиву
+ * space = O(n) // доп. память для хранения.
  */
 
 public class TwoSums {
     public int[] twoSum(int[] nums, int target) {
-        HashMap<Integer, Integer> map = new HashMap<>();
+        HashMap<Integer, Integer> hashTable = new HashMap<>();
+
 
         for (int i = 0; i < nums.length; i++) {
-            int diff = target - nums[i];
-
-            if (map.containsKey(nums[i])) {
-                //System.out.println("prevMap.get(num) = "+prevMap.get(num));
-                //System.out.println("i = "+i);
-                return new int[]{map.get(nums[i]), i};
-            }
-
-            map.put(diff, i);
-            System.out.println(map);
+            hashTable.put(nums[i], i);
         }
 
-        System.out.println(new int[]{});
-        return new int[]{};
+
+        //{3,4,2}, target = 6.
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i]; // 6 - 3
+
+            if (hashTable.containsKey(nums[i]) && hashTable.get(complement) != i) {
+                System.out.println(i);
+                System.out.println(hashTable.get(complement));
+                return new int[]{i, hashTable.get(complement)};
+            }
+
+        }
+        // no solution
+        return null;
 
     }
 }

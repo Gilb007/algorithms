@@ -30,21 +30,37 @@ import java.util.Map;
 public class TopKFrequentElements {
     public List<Integer> topKFrequent(int[] nums, int k) {
 
+        // создаем массив бакетов
         List<Integer>[] bucket = new List[nums.length + 1];
-        Map<Integer, Integer> frequencyMap = new HashMap<Integer, Integer>();
 
+        System.out.println(bucket.getClass());
+
+        //  hashMap частотностей появления там элементов в массиве nums
+        Map<Integer, Integer> frequencyMap = new HashMap<>();
+
+        // new int[]{1,1,1,2,2,3,4,4,4,4,4}
+        int i = 0;
         for (int n : nums) {
+            //System.out.println(frequencyMap.getOrDefault(n, 0));
             frequencyMap.put(n, frequencyMap.getOrDefault(n, 0) + 1);
+            //System.out.println(i+" = "+frequencyMap);
         }
 
+        //System.out.println(frequencyMap); => {1=3, 2=2, 3=1, 4=5}
+        //System.out.println(frequencyMap.keySet()); => [1, 2, 3, 4]
+        // заполняем бакеты массивом строк, где индекс есть частотность,
+        // а сами массивы из элеметов, которые столько раз появляются по индексу
         for (int key : frequencyMap.keySet()) {
             int frequency = frequencyMap.get(key);
+            //System.out.println(frequency);
             if (bucket[frequency] == null) {
                 bucket[frequency] = new ArrayList<>();
             }
             bucket[frequency].add(key);
+            //System.out.println(bucket.);
         }
 
+        System.out.println(bucket[3]);
         List<Integer> res = new ArrayList<>();
 
         for (int pos = bucket.length - 1; pos >= 0 && res.size() < k; pos--) {
@@ -52,6 +68,7 @@ public class TopKFrequentElements {
                 res.addAll(bucket[pos]);
             }
         }
+        //System.out.println(res);
         return res;
     }
 }
