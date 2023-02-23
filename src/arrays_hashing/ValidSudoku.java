@@ -9,7 +9,7 @@ public class ValidSudoku {
     // -1 if the row contains an invalid value
     // 0 if thr row contains repeated values
     // 1 is the row is valid.
-    public static int valid_row(int row, int [][] grid){
+    public int valid_row(int row, int [][] grid){
         int temp[] = grid[row];
         Set<Integer> set = new HashSet<Integer>();
         for (int value : temp) {
@@ -24,7 +24,8 @@ public class ValidSudoku {
                 return -1;
             }
             //Checking for repeated values.
-            else if (value != 0){
+            else if (value != 0) {
+                // уже есть такой элемент в Set
                 if (set.add(value) == false) {
                     return 0;
                 }
@@ -32,11 +33,12 @@ public class ValidSudoku {
         }
         return 1;
     }
+
     // Function to check if a given column is valid. It will return:
     // -1 if the column contains an invalid value
     // 0 if the column contains repeated values
     // 1 is the column is valid.
-    public static int valid_col(int col, int [][] grid){
+    public int valid_col(int col, int [][] grid){
         Set<Integer>set = new HashSet<Integer>();
         for (int i =0 ; i< 9; i++) {
             // Checking for values outside 0 and 9;
@@ -51,6 +53,8 @@ public class ValidSudoku {
             }
             // Checking for repeated values.
             else if (grid[i][col] != 0){
+                System.out.println(set.add(grid[i][col]));
+                // уже есть такой элемент в Set
                 if (set.add(grid[i][col]) == false) {
                     return 0;
                 }
@@ -58,11 +62,12 @@ public class ValidSudoku {
         }
         return 1;
     }
+
     // Function to check if all the subsquares are valid. It will return:
-// -1 if a subsquare contains an invalid value
-// 0 if a subsquare contains repeated values
-// 1 if the subsquares are valid.
-    public static int valid_subsquares(int [][] grid){
+    // -1 if a subsquare contains an invalid value
+    // 0 if a subsquare contains repeated values
+    // 1 if the subsquares are valid.
+    public int valid_subsquares(int [][] grid){
         for (int row = 0 ; row < 9; row = row + 3) {
             for (int col = 0; col < 9; col = col + 3) {
                 Set<Integer>set = new HashSet<Integer>();
@@ -90,8 +95,9 @@ public class ValidSudoku {
         }
         return 1;
     }
+
     //Function to check if the board invalid.
-    public static void valid_board(int [][] grid){
+    public void valid_board(int [][] grid){
         // Checking the rows and columns.
         for (int i =0 ; i< 9; i++) {
             int res1 = valid_row(i, grid);
@@ -111,8 +117,9 @@ public class ValidSudoku {
             System.out.println( "The board is valid." );
         }
     }
+
     // Function to print the board.
-    public static void print_board(int [][] grid){
+    public void print_board(int [][] grid){
         for (int[] row : grid) {
             System.out.print("[");
             for (int y : row) {
@@ -121,4 +128,5 @@ public class ValidSudoku {
             System.out.println("]");
         }
     }
+
 }

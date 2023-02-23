@@ -37,7 +37,8 @@ public class MainStart {
         //productofArrayExceptSelf.productExceptSelf(new int[]{1,2,3,4});
 
         //7 Valid Sudoku
-            /*// A valid board.
+            // A valid board.
+        ValidSudoku validSudoku = new ValidSudoku();
             int [] [] board = {
                     {1, 4, 7, 0, 0, 0, 0, 0, 3},
                     {2, 5, 0, 0, 0, 1, 0, 0, 0},
@@ -49,8 +50,7 @@ public class MainStart {
                     {4, 0, 0, 0, 0, 2, 0, 0, 0},
                     {0, 0, 1, 0, 0, 8, 0, 0, 7},
             };
-            print_board(board);
-            valid_board(board);
+
             // An invalid board. The first row contains
             // repeated values.
             int [] [] board2 = {
@@ -64,13 +64,15 @@ public class MainStart {
                     {4, 0, 0, 0, 0, 2, 0, 0, 0},
                     {0, 0, 1, 0, 0, 8, 0, 0, 7},
             };
-            print_board(board2);
-            valid_board(board2);*/
+
+        validSudoku.valid_row(3, board);
+        validSudoku.valid_col(5,board);
+        validSudoku.print_board(board);
 
         //8
-        EncodeAndDecodeStrings encodeAndDecodeStrings = new EncodeAndDecodeStrings();
-        encodeAndDecodeStrings.encode(new String[] {"we", "say", ":", "yes"});
-        encodeAndDecodeStrings.decode(encodeAndDecodeStrings.encode(new String[] {"we", "say", ":", "yes"}));
+        //EncodeAndDecodeStrings encodeAndDecodeStrings = new EncodeAndDecodeStrings();
+        //encodeAndDecodeStrings.encode(new String[] {"we", "say", ":", "yes"});
+        //encodeAndDecodeStrings.decode(encodeAndDecodeStrings.encode(new String[] {"we", "say", ":", "yes"}));
 
 
         //9
