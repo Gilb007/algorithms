@@ -29,9 +29,30 @@ package two_pointers;
  *
  * 1 <= s.length <= 2 * 105
  * s consists only of printable ASCII characters.
+ * Time: O(n)
+ * Space: O(1)
  */
 public class ValidPalindrome {
+    public boolean isPalindrome(String s) {
+        int l = 0;
+        int r = s.length() - 1;
 
+        while (l < r) {
+            // проскакиваем если не символ либо цифра
+            while (l < r && !Character.isLetterOrDigit(s.charAt(l)))
+                ++l;
+            // проскакиваем если не символ либо цифра
+            while (l < r && !Character.isLetterOrDigit(s.charAt(r)))
+                --r;
+            // по факту сравниваем символы
+            if (Character.toLowerCase(s.charAt(l)) != Character.toLowerCase(s.charAt(r)))
+                return false;
+            ++l;
+            --r;
+        }
+
+        return true;
+    }
 
 
 }

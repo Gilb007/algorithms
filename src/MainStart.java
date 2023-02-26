@@ -1,5 +1,8 @@
 import arrays_hashing.*;
 import sliding_window.BestTimeToBuSellStock;
+import two_pointers.ThreeSums;
+import two_pointers.TwoSumIIInputArrayIsSorted;
+import two_pointers.ValidPalindrome;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -65,9 +68,9 @@ public class MainStart {
                     {0, 0, 1, 0, 0, 8, 0, 0, 7},
             };
 
-        validSudoku.valid_row(3, board);
-        validSudoku.valid_col(5,board);
-        validSudoku.print_board(board);
+        //validSudoku.valid_row(3, board);
+        //validSudoku.valid_col(5,board);
+        //validSudoku.print_board(board);
 
         //8
         //EncodeAndDecodeStrings encodeAndDecodeStrings = new EncodeAndDecodeStrings();
@@ -78,6 +81,25 @@ public class MainStart {
         //9
         //LongestConsecutiveSequence longestConsecutiveSequence = new LongestConsecutiveSequence();
         //longestConsecutiveSequence.longestConsecutive(new int[]{100,4,200,1,3,2});
+
+        /**
+         * Tow pointers
+         */
+
+        //1
+        //ValidPalindrome validPalindrome = new ValidPalindrome();
+        //System.out.println(validPalindrome.isPalindrome("A man, a plan, a canal: Panama"));
+
+        //2
+        //TwoSumIIInputArrayIsSorted twoSumIIInputArrayIsSorted = new TwoSumIIInputArrayIsSorted();
+        //System.out.println(twoSumIIInputArrayIsSorted.twoSumArraySorted(new int[]{2,3,4}, 6));
+        //System.out.println(twoSumIIInputArrayIsSorted.twoSumArraySorted(new int[]{2,3,4}, 6)[0]);
+        //System.out.println(twoSumIIInputArrayIsSorted.twoSumArraySorted(new int[]{2,3,4}, 6)[1]);
+
+        //3
+        ThreeSums threeSums = new ThreeSums();
+        System.out.println(threeSums.threeSum(new int[]{-1,0,1,2,-1,-4}));
+
 
         /**
          * Sliding window
