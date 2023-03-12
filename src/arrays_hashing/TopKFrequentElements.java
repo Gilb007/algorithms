@@ -33,22 +33,25 @@ public class TopKFrequentElements {
         // создаем массив бакетов
         List<Integer>[] bucket = new List[nums.length + 1];
 
-        System.out.println(bucket.length);
+        //System.out.println(bucket.length);
 
-        System.out.println(bucket.getClass());
+        //System.out.println(bucket.getClass());
 
         //  hashMap частотностей появления там элементов в массиве nums
         Map<Integer, Integer> frequencyMap = new HashMap<>();
 
-        // new int[]{1,1,1,2,2,3,4,4,4,4,4}
+        // new int[]{1,1,2,1,2,3,4,4,4,4,4}
+        // вначале frequencyMap пустая {...}
         int i = 0;
         for (int n : nums) {
             //System.out.println(frequencyMap.getOrDefault(n, 0));
+            // getOrDefault - если такой ключ есть, то берем его значение
+            // если такого нет - default = 0.
             frequencyMap.put(n, frequencyMap.getOrDefault(n, 0) + 1);
-            //System.out.println(i+" = "+frequencyMap);
+            System.out.println(n+" = "+frequencyMap.getOrDefault(n, 0));
         }
 
-        //System.out.println(frequencyMap); => {1=3, 2=2, 3=1, 4=5}
+        // System.out.println(frequencyMap); //=> {1=3, 2=2, 3=1, 4=5}
         //System.out.println(frequencyMap.keySet()); => [1, 2, 3, 4]
         // заполняем бакеты массивом строк, где индекс есть частотность,
         // а сами массивы из элеметов, которые столько раз появляются по индексу
@@ -68,7 +71,7 @@ public class TopKFrequentElements {
         // выбираем k самых частых элементов в nums
         // идем  с конца на начало
         for (int pos = bucket.length - 1; pos >= 0 && res.size() < k; pos--) {
-            System.out.println(bucket.length);
+            //System.out.println(bucket.length);
             if (bucket[pos] != null) {
                 //System.out.println(bucket[pos]);
                 res.addAll(bucket[pos]);

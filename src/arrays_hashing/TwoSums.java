@@ -29,7 +29,7 @@ import java.util.HashMap;
  *
  * One pass:
  * time = O(n), // раз проходимся по массиву
- * space = O(n) // доп. память для хранения.
+ * space = O(n) // доп. память для хранения (хешмап)
  */
 
 public class TwoSums {
@@ -47,8 +47,6 @@ public class TwoSums {
             int complement = target - nums[i]; // 6 - 3
 
             if (hashTable.containsKey(nums[i]) && hashTable.get(complement) != i) {
-                System.out.println(i);
-                System.out.println(hashTable.get(complement));
                 return new int[]{i, hashTable.get(complement)};
             }
 

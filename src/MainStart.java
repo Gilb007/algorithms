@@ -1,5 +1,6 @@
 import arrays_hashing.*;
 import sliding_window.BestTimeToBuSellStock;
+import two_pointers.ContainerWithMostWater;
 import two_pointers.ThreeSums;
 import two_pointers.TwoSumIIInputArrayIsSorted;
 import two_pointers.ValidPalindrome;
@@ -16,8 +17,8 @@ public class MainStart {
          * Arrays & Hashing
          */
         //1
-        //  ContainsDuplicate containsDuplicate = new ContainsDuplicate();
-        //  containsDuplicate.containsDuplicate(new int[]{1,2,3,4});
+        // ContainsDuplicate containsDuplicate = new ContainsDuplicate();
+        // System.out.println(containsDuplicate.containsDuplicate(new int[]{1,1,3,4}));
 
         //2
         // ValidAnagram validAnagram = new ValidAnagram();
@@ -25,7 +26,7 @@ public class MainStart {
 
         //3
         //TwoSums twoSums = new TwoSums();
-        //twoSums.twoSum(new int[]{3,4,2}, 6);
+        //System.out.println(Arrays.toString(twoSums.twoSum(new int[]{3,4,2}, 6)));
 
         //4
         //GroupAnagrams groupAnagrams = new GroupAnagrams();
@@ -33,7 +34,7 @@ public class MainStart {
 
         //5
         //TopKFrequentElements topKFrequentElements = new TopKFrequentElements();
-        //topKFrequentElements.topKFrequent(new int[]{1,1,1,2,2,2,3,4,4,4,4,4}, 2);
+        //topKFrequentElements.topKFrequent(new int[]{1,1,2,1,2,2,3,4,4,4,4,4}, 2);
 
         //6
         //ProductofArrayExceptSelf productofArrayExceptSelf = new ProductofArrayExceptSelf();
@@ -80,7 +81,7 @@ public class MainStart {
 
         //9
         //LongestConsecutiveSequence longestConsecutiveSequence = new LongestConsecutiveSequence();
-        //longestConsecutiveSequence.longestConsecutive(new int[]{100,4,200,1,3,2});
+        //longestConsecutiveSequence.longestConsecutive(new int[]{1,3,2,100,4,200});
 
         /**
          * Tow pointers
@@ -92,14 +93,19 @@ public class MainStart {
 
         //2
         //TwoSumIIInputArrayIsSorted twoSumIIInputArrayIsSorted = new TwoSumIIInputArrayIsSorted();
-        //System.out.println(twoSumIIInputArrayIsSorted.twoSumArraySorted(new int[]{2,3,4}, 6));
-        //System.out.println(twoSumIIInputArrayIsSorted.twoSumArraySorted(new int[]{2,3,4}, 6)[0]);
-        //System.out.println(twoSumIIInputArrayIsSorted.twoSumArraySorted(new int[]{2,3,4}, 6)[1]);
+        //System.out.println(Arrays.toString(twoSumIIInputArrayIsSorted.twoSumArraySorted(new int[]{2,3,4}, 6)));
+        //System.out.println(Arrays.toString(twoSumIIInputArrayIsSorted.twoSumArraySorted(new int[]{2,7,11,15}, 13)));
+        //System.out.println(Arrays.toString(twoSumIIInputArrayIsSorted.twoSumArraySorted(new int[]{-1,0}, -1)));
 
         //3
-        ThreeSums threeSums = new ThreeSums();
-        System.out.println(threeSums.threeSum(new int[]{-1,0,1,2,-1,-4}));
+        //ThreeSums threeSums = new ThreeSums();
+        //System.out.println(threeSums.threeSum(new int[]{-1,0,1,2,-1,-4}));
 
+        //4
+        //ContainerWithMostWater containerWithMostWater = new ContainerWithMostWater();
+        //System.out.println(containerWithMostWater.maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
+
+        //5
 
         /**
          * Sliding window

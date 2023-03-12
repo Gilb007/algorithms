@@ -21,21 +21,22 @@ import java.util.List;
  */
 
 public class TwoSumIIInputArrayIsSorted {
-    public int[] twoSumArraySorted(int[] arr, int target) {
+    public int[] twoSumArraySorted(int[] array, int target) {
 
-        int l = 0;
-        int r = arr.length - 1;
+        int left = 0;
+        int right = array.length - 1;
 
-        int sum = 0;
-        while (arr[l] + arr[r] != target) {
-            sum = arr[l] + arr[r];
-            if (sum < target) {
-                ++l;
+        while (array[left] + array[right] != target) {
+
+            if (array[left] + array[right] > target) {
+                right--;
             } else  {
-                --r;
+                left++;
             }
+
         }
 
-        return new int[]{l+1, r+1};
+        return new int[]{left, right};
+
     }
 }

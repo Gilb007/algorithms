@@ -34,21 +34,23 @@ package two_pointers;
  */
 public class ValidPalindrome {
     public boolean isPalindrome(String s) {
-        int l = 0;
-        int r = s.length() - 1;
 
-        while (l < r) {
-            // проскакиваем если не символ либо цифра
-            while (l < r && !Character.isLetterOrDigit(s.charAt(l)))
-                ++l;
-            // проскакиваем если не символ либо цифра
-            while (l < r && !Character.isLetterOrDigit(s.charAt(r)))
-                --r;
-            // по факту сравниваем символы
-            if (Character.toLowerCase(s.charAt(l)) != Character.toLowerCase(s.charAt(r)))
+        int left = 0;
+        int right = s.length() - 1;
+        while (left < right) {
+
+            while (left < right && !Character.isAlphabetic(s.charAt(left))){
+                  left++;
+            }
+            while (left < right && !Character.isLetterOrDigit(s.charAt(right))){
+                right--;
+            }
+
+            if(Character.isLetterOrDigit(s.charAt(left)) != Character.isLetterOrDigit(s.charAt(right))){
                 return false;
-            ++l;
-            --r;
+            }
+            left++;
+            right--;
         }
 
         return true;

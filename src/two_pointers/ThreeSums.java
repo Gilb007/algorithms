@@ -37,6 +37,9 @@ import java.util.List;
  *
  * 3 <= nums.length <= 3000
  * -105 <= nums[i] <= 105
+ *
+ * Time: O(n*logn) + O(n^2) = O(n^2), O(n*logn) - сложность сортировки, O(n^2) - два цикла, чтобы пройти триплет
+ * Space: O(1), or O(n) - если берем с сортировкой.
  */
 
 public class ThreeSums {
@@ -46,12 +49,15 @@ public class ThreeSums {
 
         List<List<Integer>> ans = new ArrayList<>();
 
+        // заранее отсортировали
         Arrays.sort(nums);
 
         // идем по циклу до тех пор пока число элементов не меньше 3х
         for (int i = 0; i + 2 < nums.length; ++i) {
+            // если следующий элемент тот же самый, что и предыдущий
             if (i > 0 && nums[i] == nums[i - 1])
                 continue;
+
             // Choose nums[i] as the first num in the triplet,
             // and search the remaining nums in [i + 1, n - 1]
             int l = i + 1;
@@ -60,8 +66,10 @@ public class ThreeSums {
                 final int sum = nums[i] + nums[l] + nums[r];
                 if (sum == 0) {
                     ans.add(Arrays.asList(nums[i], nums[l++], nums[r--]));
+                    // пропускаем повторяющиеся слева
                     while (l < r && nums[l] == nums[l - 1])
                         ++l;
+                    // пропускаем повторяющиеся справа
                     while (l < r && nums[r] == nums[r + 1])
                         --r;
                 } else if (sum < 0) {

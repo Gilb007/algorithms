@@ -33,12 +33,10 @@ public class ContainsDuplicate {
 
         for (int i = 0; i < nums.length; i++) {
             if (uniques.contains(nums[i])) {
-                System.out.println("true");
                 return true;
             }
             uniques.add(nums[i]);
         }
-        System.out.println("false");
         return false;
 
     }

@@ -39,7 +39,7 @@ public class ValidSudoku {
     // 0 if the column contains repeated values
     // 1 is the column is valid.
     public int valid_col(int col, int [][] grid){
-        Set<Integer>set = new HashSet<Integer>();
+        Set<Integer> set = new HashSet<Integer>();
         for (int i =0 ; i< 9; i++) {
             // Checking for values outside 0 and 9;
             // 0 is considered valid because it

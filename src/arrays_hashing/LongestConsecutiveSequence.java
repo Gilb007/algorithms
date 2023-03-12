@@ -30,26 +30,31 @@ public class LongestConsecutiveSequence {
     public int longestConsecutive(int[] nums) {
         if (nums.length == 0) return 0;
         HashSet<Integer> set = new HashSet<>();
+        // глобальный макс.
         int ans = 1;
 
         // добавили все в set
         for (int num : nums) set.add(num);
 
-        //System.out.println(set);
+        System.out.println(set);
         for (int num : nums) {
 
-            // если нет (num-1), то текущий элемент пробуем
+            System.out.println("num = "+num);
+
+            // если нет (num-1), то текущий элемент есть начало проверки алгоритма на возростающую последоватлельность
             // на начало последовательности (чтобы не было повторений)
+            // {1,3,2,100,4,200}
             if (!set.contains(num - 1)) {
                 //System.out.println(num-1);
+                // счетчик локального макс.
                 int count = 1;
                 //  до тех пор пока справа есть +1
                 while (set.contains(num + 1)) {
-                    System.out.println(num+1);
+                    //System.out.println(num+1);
                     num++;
                     count++;
                 }
-                System.out.println("-----");
+                System.out.println("лок num = "+num);
                 ans = Math.max(count, ans);
             }
         }
