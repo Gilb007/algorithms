@@ -25,12 +25,14 @@ import java.util.Arrays;
  *
  * 2 <= nums.length <= 105
  * -30 <= nums[i] <= 30
+ *
  * The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
  * O(n) complexity, O(1) no memory
  */
 public class ProductofArrayExceptSelf {
     public int[] productExceptSelf(int[] nums) {
 
+        // {1,2,3,4}
         int[] arr = new int[nums.length];
 
         int right = 1, left = 1;
@@ -38,6 +40,8 @@ public class ProductofArrayExceptSelf {
             arr[i] = left;
             left *= nums[i];
         }
+
+        Arrays.toString(arr);
 
         for (int i = nums.length - 1; i >= 0; i--) {
             arr[i] *= right;

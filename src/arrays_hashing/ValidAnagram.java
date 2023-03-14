@@ -36,6 +36,8 @@ public class ValidAnagram {
          int[] store = new int[26];
 
          for (int i = 0; i < s.length(); i++) {
+
+             System.out.println(s.charAt(i) - 'a');
              store[s.charAt(i) - 'a']++;
              store[t.charAt(i) - 'a']--;
          }

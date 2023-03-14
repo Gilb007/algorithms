@@ -32,5 +32,24 @@ package two_pointers;
  * Only constant space required for left\text{left}left, right\text{right}right, left_max\text{left\_max}left_max and right_max\text{right\_max}right_max.
  */
 public class TrappingRainWater {
+    public int trap(int[] height) {
+        int result = 0;
+        int left = 0;
+        int right = height.length - 1;
+        while (left < right) {
+            if (height[left] <= height[right]) {
+                int current = height[left];
+                while (height[++left] < current) {
+                    result += current - height[left];
+                }
+            } else {
+                int current = height[right];
+                while(height[--right] < current) {
+                    result += current - height[right];
+                }
+            }
+        }
+        return result;
+    }
 
 }

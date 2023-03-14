@@ -37,12 +37,12 @@ public class MainStart {
         //topKFrequentElements.topKFrequent(new int[]{1,1,2,1,2,2,3,4,4,4,4,4}, 2);
 
         //6
-        //ProductofArrayExceptSelf productofArrayExceptSelf = new ProductofArrayExceptSelf();
-        //productofArrayExceptSelf.productExceptSelf(new int[]{1,2,3,4});
+        ProductofArrayExceptSelf productofArrayExceptSelf = new ProductofArrayExceptSelf();
+        productofArrayExceptSelf.productExceptSelf(new int[]{1,2,3,4});
 
         //7 Valid Sudoku
             // A valid board.
-        ValidSudoku validSudoku = new ValidSudoku();
+        /*ValidSudoku validSudoku = new ValidSudoku();
             int [] [] board = {
                     {1, 4, 7, 0, 0, 0, 0, 0, 3},
                     {2, 5, 0, 0, 0, 1, 0, 0, 0},
@@ -53,7 +53,7 @@ public class MainStart {
                     {0, 0, 3, 0, 0, 0, 0, 0, 9},
                     {4, 0, 0, 0, 0, 2, 0, 0, 0},
                     {0, 0, 1, 0, 0, 8, 0, 0, 7},
-            };
+            };*/
 
             // An invalid board. The first row contains
             // repeated values.
