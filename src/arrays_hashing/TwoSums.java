@@ -44,7 +44,7 @@ public class TwoSums {
 
         //{3,4,2}, target = 6.
         for (int i = 0; i < nums.length; i++) {
-            int complement = target - nums[i]; // 6 - 3
+            int complement = target - nums[i]; // 6 - 3 = 3
 
             if (hashTable.containsKey(nums[i]) && hashTable.get(complement) != i) {
                 return new int[]{i, hashTable.get(complement)};

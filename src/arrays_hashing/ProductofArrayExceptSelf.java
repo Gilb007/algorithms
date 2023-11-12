@@ -36,19 +36,21 @@ public class ProductofArrayExceptSelf {
         int[] arr = new int[nums.length];
 
         int right = 1, left = 1;
+        // слева направа закрываем пальцем
         for (int i = 0; i < nums.length; i++) {
             arr[i] = left;
             left *= nums[i];
         }
 
-        Arrays.toString(arr);
+        System.out.println(Arrays.toString(arr));
 
         for (int i = nums.length - 1; i >= 0; i--) {
-            arr[i] *= right;
-            right *= nums[i];
+            arr[i] = arr[i] * right;
+            right = right * nums[i];
+            System.out.println(right);
         }
 
-        System.out.println(Arrays.toString(arr));
+        //System.out.println(Arrays.toString(arr));
         return arr;
 
     }

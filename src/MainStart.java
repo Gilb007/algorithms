@@ -21,8 +21,8 @@ public class MainStart {
         // System.out.println(containsDuplicate.containsDuplicate(new int[]{1,1,3,4}));
 
         //2
-        // ValidAnagram validAnagram = new ValidAnagram();
-        // validAnagram.isAnagram("anagram","nagaram");
+         ValidAnagram validAnagram = new ValidAnagram();
+         validAnagram.isAnagram("anagram","nagaram");
 
         //3
         //TwoSums twoSums = new TwoSums();
@@ -37,8 +37,8 @@ public class MainStart {
         //topKFrequentElements.topKFrequent(new int[]{1,1,2,1,2,2,3,4,4,4,4,4}, 2);
 
         //6
-        ProductofArrayExceptSelf productofArrayExceptSelf = new ProductofArrayExceptSelf();
-        productofArrayExceptSelf.productExceptSelf(new int[]{1,2,3,4});
+        //ProductofArrayExceptSelf productofArrayExceptSelf = new ProductofArrayExceptSelf();
+        //productofArrayExceptSelf.productExceptSelf(new int[]{1,2,3,4});
 
         //7 Valid Sudoku
             // A valid board.
@@ -115,3 +115,4 @@ public class MainStart {
 
     }
 }
+

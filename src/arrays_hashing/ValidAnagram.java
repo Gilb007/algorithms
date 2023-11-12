@@ -38,10 +38,13 @@ public class ValidAnagram {
          for (int i = 0; i < s.length(); i++) {
 
              System.out.println(s.charAt(i) - 'a');
+             //System.out.println(t.charAt(i) - 'a');
              store[s.charAt(i) - 'a']++;
              store[t.charAt(i) - 'a']--;
          }
 
+         // если есть хотя бы один ноль в массиве 0/1,
+         // то не анаграмма.
          for (int n: store) {
              if(n != 0) {
                  return false;
