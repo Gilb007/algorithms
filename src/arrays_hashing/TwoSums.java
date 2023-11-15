@@ -49,7 +49,6 @@ public class TwoSums {
             if (hashTable.containsKey(nums[i]) && hashTable.get(complement) != i) {
                 return new int[]{i, hashTable.get(complement)};
             }
-
         }
         // no solution
         return null;

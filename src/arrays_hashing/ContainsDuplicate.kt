@@ -1,7 +1,4 @@
-package arrays_hashing;
-
-import java.util.HashSet;
-import java.util.Set;
+package arrays_hashing
 
 /**
  * 217. Contains Duplicate
@@ -25,21 +22,20 @@ import java.util.Set;
  *
  * brute force: time = O(n^2), space = O(1)
  */
-public class ContainsDuplicate {
-    public boolean containsDuplicate(int[] nums) {
+class ContainsDuplicate {
 
-        //дополнительное место для хранения uniques (HashSet)
-        Set<Integer> uniques = new HashSet<>();
+    fun containsDuplicate(nums: IntArray): Boolean {
+            //дополнительное место для хранения uniques (HashSet)
+            val uniques = HashSet<Int>()
 
-        for (int i = 0; i < nums.length; i++) {
-            if (uniques.contains(nums[i])) {
-                return true;
+            for (e in nums) {
+                if (uniques.contains(e)) return true
+                else uniques.add(e)
             }
-            uniques.add(nums[i]);
-        }
-        return false;
-
+            return false
     }
+    // add - Adds the specified element to this set if it is not already present.
+
 }
 /**
  * добавлем HasSet и добавляем уникальные элементы,

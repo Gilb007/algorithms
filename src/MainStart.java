@@ -11,18 +11,6 @@ import java.util.List;
 
 public class MainStart {
     public static void main(String[] args) {
-        //System.out.println("Hello world! Vlad");
-
-        /**
-         * Arrays & Hashing
-         */
-        //1
-        // ContainsDuplicate containsDuplicate = new ContainsDuplicate();
-        // System.out.println(containsDuplicate.containsDuplicate(new int[]{1,1,3,4}));
-
-        //2
-         ValidAnagram validAnagram = new ValidAnagram();
-         validAnagram.isAnagram("anagram","nagaram");
 
         //3
         //TwoSums twoSums = new TwoSums();
