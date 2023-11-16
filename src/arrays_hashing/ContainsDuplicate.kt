@@ -42,3 +42,8 @@ class ContainsDuplicate {
  * если в Set встретился еще один, то говорим true
  * time = O(n), space = O(n) - дополнительное место для хранения uniques (HashSet)
  */
+fun main() {
+    val containsDuplicate = ContainsDuplicate()
+    val arr = intArrayOf(4, 6, 8, 3, 4, 4, 96)
+    println(containsDuplicate.containsDuplicate(arr))
+}

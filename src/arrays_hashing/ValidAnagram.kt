@@ -42,3 +42,8 @@ class ValidAnagram {
         return arr.all { it == 0 }
     }
 }
+
+fun main() {
+    val validAnagram = ValidAnagram()
+    println(validAnagram.isAnagram("anagram","nagaram"))
+}

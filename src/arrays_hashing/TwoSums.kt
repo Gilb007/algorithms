@@ -1,6 +1,4 @@
-package arrays_hashing;
-
-import java.util.HashMap;
+package arrays_hashing
 
 /**
  * Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
@@ -32,26 +30,25 @@ import java.util.HashMap;
  * space = O(n) // доп. память для хранения (хешмап)
  */
 
-public class TwoSums {
-    public int[] twoSum(int[] nums, int target) {
-        HashMap<Integer, Integer> hashTable = new HashMap<>();
+//{3,4,2}, target = 6.
 
-
-        for (int i = 0; i < nums.length; i++) {
-            hashTable.put(nums[i], i);
-        }
-
-
-        //{3,4,2}, target = 6.
-        for (int i = 0; i < nums.length; i++) {
-            int complement = target - nums[i]; // 6 - 3 = 3
-
-            if (hashTable.containsKey(nums[i]) && hashTable.get(complement) != i) {
-                return new int[]{i, hashTable.get(complement)};
+class TwoSums {
+    fun twoSum(nums: IntArray, target: Int): IntArray {
+        val prevMap: HashMap<Int, Int> = HashMap()
+        for (i in nums.indices) {
+            val num = nums[i]
+            val diff = target - num
+            if (prevMap.containsKey(diff)) {
+                return intArrayOf(prevMap[diff]!!, i)
             }
+            prevMap[num] = i
         }
         // no solution
-        return null;
-
+        return intArrayOf()
     }
+}
+
+fun main() {
+    val result = TwoSums().twoSum(intArrayOf(2, 7, 11, 15), 9)
+    println(result.contentToString())
 }

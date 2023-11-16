@@ -12,10 +12,6 @@ import java.util.List;
 public class MainStart {
     public static void main(String[] args) {
 
-        //3
-        //TwoSums twoSums = new TwoSums();
-        //System.out.println(Arrays.toString(twoSums.twoSum(new int[]{3,4,2}, 6)));
-
         //4
         //GroupAnagrams groupAnagrams = new GroupAnagrams();
         //groupAnagrams.groupAnagrams(new String[]{"eat","tea","tan","ate","nat","bat"});
