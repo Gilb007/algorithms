@@ -57,10 +57,6 @@ public class MainStart {
         //validSudoku.valid_col(5,board);
         //validSudoku.print_board(board);
 
-        //8
-        //EncodeAndDecodeStrings encodeAndDecodeStrings = new EncodeAndDecodeStrings();
-        //encodeAndDecodeStrings.encode(new String[] {"we", "say", ":", "yes"});
-        //encodeAndDecodeStrings.decode(encodeAndDecodeStrings.encode(new String[] {"we", "say", ":", "yes"}));
 
 
         //9
